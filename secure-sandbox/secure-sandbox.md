@@ -44,10 +44,10 @@ This is a very meaningful leak since, using `/proc/{pid}/mem` we can change the 
 
 it's possible to edit the parent's memory from child since they belong to same group and the chall file is probably being run as root.
 
-So using `open` we first open `/proc/{pid}/mem`
-i saw it in use in this [writeup](http://jgeralnik.github.io/writeups/2020/09/05/writeonly/)
-Then we can use `lseek` to get out cursor to the area where `puts` function is, since after executing the shellcode we execute the puts function.
-After that we can use `write` to wrtite our shellcode where `puts` is
+So 
+- using `open` we first open `/proc/{pid}/mem` , i saw it in use in this [writeup](http://jgeralnik.github.io/writeups/2020/09/05/writeonly/)
+- Then we can use `lseek` to get out cursor to the area where `puts` function is, since after executing the shellcode we execute the puts function.
+- After that we can use `write` to wrtite our shellcode where `puts` is
 
 and finally we'll get the shell
 
