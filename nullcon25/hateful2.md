@@ -11,7 +11,7 @@ We have a use-after-free vulnerability.
 
 the [solve script](solve.py)
 
-```pytohn
+```python
 #!/usr/bin/env python3
 
 from pwn import *
