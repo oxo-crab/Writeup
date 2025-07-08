@@ -51,7 +51,7 @@ int __fastcall main(int argc, const char **argv, const char **envp)
 
 If you're unfamiliar with format strings i recommend you to first read this excellent [blog](https://axcheron.github.io/exploit-101-format-strings/) which explains most of the stuff required in detail.
 
-As you can see, we once again have one shot at printf here... but on stack leak this time,
+As you can see, we once again have one shot at printf here... but no stack leak this time,
 so we cant modify the RIP in printf's frame easily without some bruteforce.
 
 Instead we have PIE leak:
@@ -59,7 +59,7 @@ Instead we have PIE leak:
  printf("I feel generous so have this: %p\n", main);
  ```
 
- And seeing that the binary has partial relro, you should start which got should we be overwriting
+ And seeing that the binary has partial relro, you should start thinking which GOT should we be overwriting
  using this leak.
  Another wonderful thing is the stack pointer present in the buffer area which gets modified based on
  our first input
