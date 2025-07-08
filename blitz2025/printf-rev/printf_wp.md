@@ -1,7 +1,7 @@
 ## 1. Printf
 
 author: 0x1337
-points: 482
+points: 495
 
 the checksec output shows
 ```
