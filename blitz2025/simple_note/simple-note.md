@@ -1,7 +1,7 @@
 # Simple Note
 
 author: kuvee
-points: 4566
+points: 491
 
 the checksec output:
 ```
