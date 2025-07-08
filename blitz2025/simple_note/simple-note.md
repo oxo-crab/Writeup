@@ -40,7 +40,7 @@ unsigned __int64 sub_193C()
 }
 ```
 
-When we are doing scanf on `v1` there's no check if it's being taken properly, so if you just give newline, it will print the address of `v1` in the printf line which just happens to be pointer in bss area, awesome.
+When we are doing scanf on `v1` there's no check if it's being taken properly, so if you just give any nonsensical input, it will print the address of `v1` in the printf line which just happens to be pointer in bss area, awesome.
 
 The main idea behind the exploitation is to first get a heap leak to defeat [safe-link](https://ir0nstone.gitbook.io/notes/binexp/heap/safe-linking) and perform some attack on fastbins to make it return arbitrary pointer,
 we want it to be in the BSS area where the array storing the pointers is present, there we can write our own pointers and read/write.
