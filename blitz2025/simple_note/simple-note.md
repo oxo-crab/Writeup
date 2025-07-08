@@ -68,7 +68,7 @@ So lets start
     for i in range(7):
             malloc(0x33,b'')
     ```
-    this works because on invalid input like just a '\n' it frees the area and makes the pointer in pointer array NULL
+    this works because on invalid input, it frees the area and makes the pointer in pointer array NULL
 
 
 - Now we perform double-free on the fastbin and then change the next pointer to get a controlled pointer in bss area (similar to tcache poinsoning)
