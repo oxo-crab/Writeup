@@ -7,3 +7,10 @@ writeup for
 
 writeup for
 - hateful2 (heap)
+
+# Blitz 2025
+
+writeup for
+- printf
+- printf-rev
+- simple note
