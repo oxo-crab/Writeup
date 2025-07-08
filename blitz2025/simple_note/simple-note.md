@@ -18,7 +18,7 @@ On inspecting the decompilation, we notice:
 - allocation is done using calloc() instead of main(), why does this matter? calloc zeroes out space on allocation and the algorithm slightly differs from malloc, so it will be more oriented toward fast-bin attack
 - There's a peculiar function on input 9999, which gives a very nice leak
 ```
-Note: something very interesting to see is, if your allocation bin's size has `IS_MMAPED` flag set, then calloc wont zero out its region because it's alrigth zero-ed out from mmap
+Note: something very interesting to see is, if your allocation bin's size has `IS_MMAPED` flag set, then calloc wont zero out its region because it assumes it's already zero-ed out because of mmap
 ```
 ```c
 unsigned __int64 sub_193C()
