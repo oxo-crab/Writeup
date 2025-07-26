@@ -111,7 +111,7 @@ I find innteresting leaks at 340 and 706
 Debuggging the process in container and using vmmap i determine that using 304 i get leak from fixed offset from our object `a` and from 706 i get a leak of `/usr/bin/python3.10` which looks like `0x55..`
 
 ```
-Note: the process in container can be debugged in same way earlier```
+Note: the process in container can be debugged in same way earlier
 ```
 
 I also extract the `/usr/bin/python3.10` from container to make it easy for me to run ROPgadget on it.
