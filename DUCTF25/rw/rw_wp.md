@@ -43,7 +43,7 @@ typedef struct {
 
 Alright let's try to put the arbitrary read and write to use.
 
-For reading we hvae to give `r [num]` as our input, and we only give till 4, after 4 it gives out of index error, maybe we can change that..
+For reading we have to give `r [num]` as our input, and we only give till 4, after 4 it gives out of index error, maybe we can change that..
 
 To find our python object while debugging, i start writing `0xdeadbeef` in the start, it will only overwrite `ob_refcnt` field which we dont really care about.
 Once thats done we can use `search -t qword 0xdeadbeef` command in pwndbg to get the address of our object
@@ -145,7 +145,7 @@ I decide to do something like this
 and write something at `obj+16`
 
 
-I was stuck here for a very long time, since i was trying ropping and using syscalls, unable to pivot the stack. Having no leak for system i couldnt call system directly from there, i tried fuzzing huge indexes to get leaks like those
+I was stuck here for a very long time, since i was trying ropping and using syscalls, unable to pivot the stack. Having no leak for system from libc, i couldnt call system directly from there, i tried fuzzing huge indexes to get leaks like those
 
 Then i realized the python binary might have plts which resolve the addresses, thanks to gpt :')
 
