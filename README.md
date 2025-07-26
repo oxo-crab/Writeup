@@ -14,3 +14,10 @@ writeup for
 - printf
 - printf-rev
 - simple note
+
+# DUCTF 2025
+
+writeup for 
+- rw.py
+solve script for 
+- fakeobj
