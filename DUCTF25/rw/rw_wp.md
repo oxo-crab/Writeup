@@ -136,7 +136,7 @@ And we see this interesting instruction `0x5594eeb993de    call   qword ptr [r14
 
 where `r14` has the modified pointer from `obj+8` which we can notices because 0x41 in decimal is 65.
 
-So while exiting it will load `obj+8` in r14 and call whatever is at `\*(obj+8)+0xb8`, so we can modify it to point to somewhere in object area because we can control this area with arbitrary write
+So while exiting it will load `obj+8` in r14 and call whatever is at `*(obj+8)+0xb8`, so we can modify it to point to somewhere in object area because we can control this area with arbitrary write
 
 I decide to do something like this
 ```c
