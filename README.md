@@ -19,5 +19,4 @@ writeup for
 
 writeup for 
 - rw.py
-solve script for 
 - fakeobj
