@@ -96,7 +96,7 @@ def fuzz():
             pass
 ```
 
-I find innteresting leaks at 340 and 706
+I find interesting leaks at 340 and 706
 
 ```
 > w 16 255
